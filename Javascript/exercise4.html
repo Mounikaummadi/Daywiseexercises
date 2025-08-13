@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exercise 4 - Characters Remaining</title>
+</head>
+<body>
+
+<input type="text" id="input1" maxlength="50" placeholder="Type here (max 50 chars)">
+<br>
+<label id="label1">50 characters remaining</label>
+
+<script>
+  var inputBox = document.getElementById("input1");
+  var label = document.getElementById("label1");
+  inputBox.addEventListener("input", function() {
+    var maxLen = 50;                       
+    var currentLen = inputBox.value.length;
+    var remaining = maxLen - currentLen;
+    label.textContent = remaining + " characters remaining";
+  });
+</script>
+
+</body>
+</html>
