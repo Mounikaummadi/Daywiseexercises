@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>City Dropdown</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    button { padding: 6px 12px; background: blue; color: white; border: none; cursor: pointer; margin-bottom: 15px; }
+    select { padding: 6px; width: 200px; }
+  </style>
+</head>
+<body>
+
+<h2>City List</h2>
+<button onclick="loadCities()">Load Cities</button>
+<br><br>
+<select id="cityDropdown">
+  <option value="">-- Select a City --</option>
+</select>
+
+<script>
+let cities = ["Hyderabad", "Mumbai", "Delhi", "Chennai", "Bengaluru", "Kolkata"];
+
+function loadCities() {
+  let dropdown = document.getElementById("cityDropdown");
+  dropdown.innerHTML = '<option value="">-- Select a City --</option>';
+  let sortedCities = cities.slice().sort();
+  sortedCities.forEach(city => {
+    let option = document.createElement("option");
+    option.value = city;
+    option.textContent = city;
+    dropdown.appendChild(option);
+  });
+}
+</script>
+
+</body>
+</html>
