@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator Demo</title>
+</head>
+<body>
+    <h2 id="output"></h2>
+
+    <script>
+        class Calculator {
+            add(a, b) {
+                return a + b;
+            }
+
+            subtract(a, b) {
+                return a - b;
+            }
+        }
+
+        const calc = new Calculator();
+        const outputText = `
+            Add 10 + 5 = ${calc.add(10, 5)} <br>
+            Subtract 10 - 5 = ${calc.subtract(10, 5)}
+        `;
+        console.log(outputText);
+        document.getElementById("output").innerHTML = outputText;
+    </script>
+</body>
+</html>
