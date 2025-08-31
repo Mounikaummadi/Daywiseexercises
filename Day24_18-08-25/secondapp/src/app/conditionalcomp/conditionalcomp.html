@@ -1,0 +1,15 @@
+@if(showMsg){
+    <span>Show msg</span>
+}
+<input type="checkbox" (click)="toggle()"><br><br>
+
+
+<select>
+  @if (loadedCountries.length > 0) {
+    <option value="" disabled selected>Select a country</option>
+    @for (country of loadedCountries; track country) {
+      <option [value]="country">{{ country }}</option>
+    }
+  }
+</select><br><br>
+<button (click)="loadCountries()">Load</button>

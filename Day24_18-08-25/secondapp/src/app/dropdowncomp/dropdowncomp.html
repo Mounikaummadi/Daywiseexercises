@@ -1,0 +1,25 @@
+<div>
+    <select [(ngModel)]="color">
+  <option value="red">Red</option>
+  <option value="Green">Green</option>
+  <option value="blue">Black</option>
+  <option
+  value="default">--Default--</option>
+</select>
+@switch(color){
+    @case("red"){
+        <div class="text-danger">Red color</div>
+    }
+    @case("Green"){
+        <div class="text-success">Green color</div>
+    }
+    @case("blue"){
+        <div class="text-primary">Blue color</div>
+    }
+
+    @default{
+    <div class="text-dark">Default Color</div>
+}
+}
+</div>
+<app-searchcomp></app-searchcomp>

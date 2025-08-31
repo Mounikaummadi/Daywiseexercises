@@ -1,0 +1,8 @@
+var employees=[
+    {name:"Badari",role:"developer",empId:"W520",salary:22000},
+    {name:"Nitheesh",role:"manager",empId:"W003",salary:62000},
+    {name:"Narayana",role:"manager",empId:"W519",salary:72000},
+];
+let filteredEmpList=employees.filter((emp)=>emp.role=="manager")
+                             .reduce((filteredEmpList,emp)=>filteredEmpList+emp.salary,0); 
+console.log(filteredEmpList)

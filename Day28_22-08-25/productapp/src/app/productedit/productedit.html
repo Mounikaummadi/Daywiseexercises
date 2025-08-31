@@ -1,0 +1,16 @@
+<form>
+<div>
+    <label for="name">Name:</label>
+    <input id="name" name="productName" [(ngModel)]="products.name"   type="text">
+  </div>
+  <div>
+    <label for="category">Category:</label>
+    <input id="category" name="productCategory" [(ngModel)]="products.category"  type="text">
+  </div>
+  <div>
+    <label for="price">Price:</label>
+    <input id="price" name="productPrice" [(ngModel)]="products.price"  type="text">
+  </div>
+
+  <button (click)="save()">Save</button>
+</form>

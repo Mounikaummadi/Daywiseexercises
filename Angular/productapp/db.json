@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop",
+      "category": "Electronics",
+      "price": 85000
+    },
+    {
+      "id": "2",
+      "name": "Coffee Maker",
+      "category": "Home & Kitchen",
+      "price": 3999
+    },
+    {
+      "id": "3",
+      "name": "Notebook",
+      "category": "Stationery",
+      "price": 120
+    },
+    {
+      "id": "b8a1",
+      "name": "laptop",
+      "category": "electronics",
+      "price": 30000
+    },
+    {
+      "id": "fda0",
+      "name": "lap",
+      "category": "electronics",
+      "price": 30000
+    }
+  ]
+}

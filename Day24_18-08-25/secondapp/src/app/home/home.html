@@ -1,0 +1,11 @@
+<div class="books-grid">
+  @for(book of books; track book){
+    <div class="book-card" >
+        <div class="image-wrap">
+            <img [src]="book.image" [alt]="book.title" loading="lazy" />
+        </div>
+        <h3 class="title">{{ book.title }}</h3>
+        <p class="desc">{{ book.description }}</p>
+    </div>
+    }
+</div>
