@@ -1,0 +1,39 @@
+{
+  "vehicles": [
+    {
+      "id": "1",
+      "make": "Tata",
+      "fuelType": "Petrol",
+      "model": "TataCurve",
+      "price": 1900000
+    },
+    {
+      "id": "2",
+      "make": "Mahindra",
+      "fuelType": "Electric",
+      "model": "BE 6E",
+      "price": 3000000
+    },
+    {
+      "id": "3",
+      "make": "Hyundai",
+      "fuelType": "Diesel",
+      "model": "Creta",
+      "price": 1400000
+    },
+    {
+      "id": "4",
+      "make": "Tata",
+      "fuelType": "Petrol",
+      "model": "Nexon",
+      "price": 1400000
+    },
+    {
+      "id": "5dc7",
+      "make": "",
+      "model": "",
+      "fuelType": "",
+      "price": 0
+    }
+  ]
+}

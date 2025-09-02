@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoginPage</title>
+    <link rel="stylesheet" href="loginpage.css">
+</head>
+<body>
+    <div class="container">
+        <form action=""><h2>Login</h2>
+        <input type="text" placeholder="Enter UserName" name="email" id="email" onblur="validateEmail()">
+        <div class="error" id="passwordError"></div>
+        <input type="password" placeholder="Enter Your Password" name="password" id="password" onblur="validatePassword()">
+        <div class="error" id="passwordError"></div>
+        <button onclick="login()">Login</button>
+        <button onclick="logout()">Logout</button>
+
+    </form>
+        
+    </div>
+    <script src="loginpage.js"></script>
+</body>
+</html>

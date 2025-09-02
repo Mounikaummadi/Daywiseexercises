@@ -1,0 +1,2 @@
+2025-08-08T12:12:45.637+05:30  WARN 18880 --- [logdemo] [http-nio-8080-exec-1] c.w.logdemo.controller.GreetController   : This is a WARN log
+2025-08-08T12:12:45.640+05:30 ERROR 18880 --- [logdemo] [http-nio-8080-exec-1] c.w.logdemo.controller.GreetController   : This is an ERROR log

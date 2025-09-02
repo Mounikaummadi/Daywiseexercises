@@ -1,0 +1,62 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" style="max-width:400px; margin:2rem auto;">
+
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" placeholder="Enter Name" />
+
+    @if((registrationForm.controls['name'].invalid) && 
+         (registrationForm.controls['name'].touched || registrationForm.controls['name'].dirty)) {
+      @if(registrationForm.controls['name'].errors?.['required']) {
+        <mat-error>Name is Required</mat-error>
+      }
+    }
+  </mat-form-field>
+
+
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email" placeholder="Enter Email" />
+
+    @if((registrationForm.controls['email'].invalid) && 
+         (registrationForm.controls['email'].touched || registrationForm.controls['email'].dirty)) {
+      @if(registrationForm.controls['email'].errors?.['required']) {
+        <mat-error>Email is Required</mat-error>
+      }
+      @if(registrationForm.controls['email'].errors?.['email']) {
+        <mat-error>Email is not in correct format</mat-error>
+      }
+    }
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Date of Birth</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dob" placeholder="Select DOB" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+
+    @if((registrationForm.controls['dob'].invalid) && 
+         (registrationForm.controls['dob'].touched || registrationForm.controls['dob'].dirty)) {
+      @if(registrationForm.controls['dob'].errors?.['required']) {
+        <mat-error>Date of Birth is Required</mat-error>
+      }
+    }
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Subject of Study</mat-label>
+    <mat-select formControlName="subject" placeholder="Select Subject">
+      <mat-option *ngFor="let sub of subjects" [value]="sub">{{ sub }}</mat-option>
+    </mat-select>
+
+    @if((registrationForm.controls['subject'].invalid) && 
+         (registrationForm.controls['subject'].touched || registrationForm.controls['subject'].dirty)) {
+      @if(registrationForm.controls['subject'].errors?.['required']) {
+        <mat-error>Subject is Required</mat-error>
+      }
+    }
+  </mat-form-field><br>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="registrationForm.invalid">
+    Submit
+  </button>
+</form>

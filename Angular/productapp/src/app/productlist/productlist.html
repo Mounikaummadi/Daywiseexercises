@@ -1,0 +1,9 @@
+<div class="product-list">
+  <button (click)="addProduct()" >Add  Product </button>
+    <div *ngFor="let product of products">
+        <h4>{{product.name}}---{{product.category}}---{{product.price}}--{{product.qty}}</h4>
+        <a [routerLink]="['/productedit',product.id]">Edit</a>
+        <a [routerLink]="['/productdelete',product.id]">Delete</a>
+    </div>
+
+</div>
