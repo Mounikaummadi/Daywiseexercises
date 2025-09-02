@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            # User Service - Auth APIs
+            - id: user-service-auth
+              uri: lb://user-service
+              predicates:
+                - Path=/auth/**
+
+            # User Service - User APIs
+            - id: user-service-users
+              uri: lb://user-service
+              predicates:
+                - Path=/api/users/**
+
+            # Task Service
+            - id: product-service
+              uri: lb://product-service
+              predicates:
+                - Path=/api/products/**
+
+            # Task Submission Service
+            - id: order-service
+              uri: lb://order-service
+              predicates:
+                - Path=/api/**
+
+          default-filters:
+            - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowedOrigins: "*"
+                allowedMethods: "*"
+                allowedHeaders: "*"
+
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
+
+server:
+  port: 9090
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8084/eureka/
